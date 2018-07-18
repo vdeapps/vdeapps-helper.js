@@ -25,7 +25,7 @@ gulp.task('js', function () {
     return gulp.src([
         'src/**/*.js'
     ])
-        .pipe(plugins.concat('vdeappsHelper.js'))
+        .pipe(plugins.concat('vdeapps-helper.js'))
         .pipe(babel())
         .pipe(gulp.dest('dist/js')); //Destination
 });
@@ -39,7 +39,7 @@ gulp.task('css', function () {
         .pipe(autoprefixer({
             browsers: ['last 5 versions']
         })) //prefix des browsers
-        .pipe(plugins.concatCss("vdeappsHelper.css"))
+        .pipe(plugins.concatCss("vdeapps-helper.css"))
         .pipe(gulp.dest('dist/css')); //Destination
 });
 
@@ -47,7 +47,7 @@ gulp.task('minify', function () {
 	return gulp.src([
         'dist/js/*.js'
     ])
-        .pipe(plugins.concat('vdeappsHelper.min.js'))
+        .pipe(plugins.concat('vdeapps-helper.min.js'))
         .pipe(plugins.uglify())
         .pipe(gulp.dest('dist/js'));
 });

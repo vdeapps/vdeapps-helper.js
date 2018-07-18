@@ -12,19 +12,19 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * Copyright vdeApps
  */
 
-var helper = function (_vdeappsAddonAbstract) {
-    _inherits(helper, _vdeappsAddonAbstract);
+var vdeappsHelper = function (_vdeappsAddonAbstract) {
+    _inherits(vdeappsHelper, _vdeappsAddonAbstract);
 
-    function helper() {
-        _classCallCheck(this, helper);
+    function vdeappsHelper() {
+        _classCallCheck(this, vdeappsHelper);
 
-        var _this = _possibleConstructorReturn(this, (helper.__proto__ || Object.getPrototypeOf(helper)).call(this));
+        var _this = _possibleConstructorReturn(this, (vdeappsHelper.__proto__ || Object.getPrototypeOf(vdeappsHelper)).call(this));
 
-        _this.setName('helper');
+        _this.setName('vdeappsHelper');
         return _this;
     }
 
-    _createClass(helper, [{
+    _createClass(vdeappsHelper, [{
         key: 'executeFunctionByName',
 
 
@@ -140,5 +140,5 @@ var helper = function (_vdeappsAddonAbstract) {
         }
     }]);
 
-    return helper;
+    return vdeappsHelper;
 }(vdeappsAddonAbstract);

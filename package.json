@@ -1,8 +1,8 @@
 {
-  "name": "vdeapps-helper",
-  "version": "1.0.1",
+  "name": "vdeapps-helper.js",
+  "version": "1.0.3",
   "description": "Helpers addon for vdeappsAddons",
-  "main": "vdeappsHelper.js",
+  "main": "vdeapps-helper.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prod": "gulp clean && gulp dev && gulp minify",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vdeapps/vdeappsHelper.js.git"
+    "url": "git+https://github.com/vdeapps/vdeapps-helper.js.git"
   },
   "keywords": [
     "vdeapps",
@@ -19,11 +19,11 @@
   "author": "vdeapps",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vdeapps/vdeappsHelper.js/issues"
+    "url": "https://github.com/vdeapps/vdeapps-helper.js/issues"
   },
-  "homepage": "https://github.com/vdeapps/vdeappsHelper.js#readme",
+  "homepage": "https://github.com/vdeapps/vdeapps-helper.js#readme",
   "dependencies": {
-    "vdeapps-addons": "^1.0.1"
+    "vdeapps-addons.js": "^1.0.1"
   },
   "devDependencies": {
     "babel": "^6.23.0",

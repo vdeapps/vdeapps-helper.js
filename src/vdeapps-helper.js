@@ -3,11 +3,11 @@
  * Copyright vdeApps
  */
 
-class helper extends vdeappsAddonAbstract {
+class vdeappsHelper extends vdeappsAddonAbstract {
     
     constructor() {
         super();
-        this.setName('helper');
+        this.setName('vdeappsHelper');
     }
     
     static str_pad(input, padLength, padString, padType) { // eslint-disable-line camelcase
