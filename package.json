@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/vdeapps/vdeappsHelper.js#readme",
   "dependencies": {
-    "vdeappsaddons": "^1.0.1"
+    "vdeapps-addons": "^1.0.1"
   },
   "devDependencies": {
     "babel": "^6.23.0",
