@@ -24,73 +24,20 @@ var vdeappsHelper = function (_vdeappsAddonAbstract) {
         return _this;
     }
 
-    _createClass(vdeappsHelper, [{
-        key: 'executeFunctionByName',
+    /**
+     * php str_pad
+     * @example str_pad('Kevin van Zonneveld', 30, '-=', 'STR_PAD_LEFT')
+     * @example str_pad('Kevin van Zonneveld', 30, '-', 'STR_PAD_BOTH')
+     *
+     * @param input
+     * @param padLength
+     * @param padString
+     * @param padType
+     * @returns {string}
+     */
 
 
-        /**
-         * Execute function by dynamic name
-         * executeFunctionByName("My.Namespace.functionName", window, arguments);
-         * executeFunctionByName("Namespace.functionName", My, arguments);
-         * @param functionName
-         * @param context
-         * @param args
-         * @returns result function
-         */
-        value: function executeFunctionByName(functionName, context /*, args */) {
-            if (typeof context == 'undefined') {
-                context = window;
-            }
-            var args = Array.prototype.slice.call(arguments).splice(2, 2);
-            var namespaces = functionName.split(".");
-
-            $.each(namespaces, function (key, value) {
-                context = context[value];
-            });
-            if (typeof context == 'function') {
-                return context.apply(this, args);
-            }
-            return false;
-        }
-
-        /**
-         * Retourne un ID unique
-         * @returns {string}
-         */
-
-    }, {
-        key: 'uniqID',
-        value: function uniqID() {
-            var ts = new Date().getTime();
-            var randnum = Math.floor(Math.random() * 1000 + 1);
-            return String(ts) + String(randnum);
-        }
-
-        /**
-         * reset all form elements
-         * @param elem
-         */
-
-    }, {
-        key: 'resetFilters',
-        value: function resetFilters(elem) {
-            var $form = $(elem).closest('form');
-
-            $('input, select', $form).each(function () {
-                if (typeof $(this).attr('name') != 'undefined') {
-                    if ($(this).attr('class').indexOf('selectpicker') != -1) {
-                        if (typeof $(this).attr('multiple') != 'undefined') {
-                            $(this).selectpicker('deselectAll');
-                        } else {
-                            $(this).selectpicker('val', '');
-                        }
-                    } else {
-                        $(this).val('');
-                    }
-                }
-            });
-        }
-    }], [{
+    _createClass(vdeappsHelper, null, [{
         key: 'str_pad',
         value: function str_pad(input, padLength, padString, padType) {
             // eslint-disable-line camelcase
@@ -137,6 +84,73 @@ var vdeappsHelper = function (_vdeappsAddonAbstract) {
             }
 
             return input;
+        }
+
+        /**
+         * Execute function by dynamic name
+         * executeFunctionByName("My.Namespace.functionName", window, arguments);
+         * executeFunctionByName("Namespace.functionName", My, arguments);
+         * @param functionName
+         * @param context
+         * @param args
+         * @returns result function
+         */
+
+    }, {
+        key: 'executeFunctionByName',
+        value: function executeFunctionByName(functionName, context /*, args */) {
+            if (typeof context == 'undefined') {
+                context = window;
+            }
+            var args = Array.prototype.slice.call(arguments).splice(2, 2);
+            var namespaces = functionName.split(".");
+
+            $.each(namespaces, function (key, value) {
+                context = context[value];
+            });
+            if (typeof context == 'function') {
+                return context.apply(this, args);
+            }
+            return false;
+        }
+
+        /**
+         * Retourne un ID unique
+         * @returns {string}
+         */
+
+    }, {
+        key: 'uniqID',
+        value: function uniqID() {
+            var ts = new Date().getTime();
+            var randnum = Math.floor(Math.random() * 1000 + 1);
+            return String(ts) + String(randnum);
+        }
+
+        /**
+         * reset all form elements
+         * use jQuery
+         * @param elem
+         */
+
+    }, {
+        key: 'resetFilters',
+        value: function resetFilters(elem) {
+            var $form = $(elem).closest('form');
+
+            $('input, select', $form).each(function () {
+                if (typeof $(this).attr('name') != 'undefined') {
+                    if ($(this).attr('class').indexOf('selectpicker') != -1) {
+                        if (typeof $(this).attr('multiple') != 'undefined') {
+                            $(this).selectpicker('deselectAll');
+                        } else {
+                            $(this).selectpicker('val', '');
+                        }
+                    } else {
+                        $(this).val('');
+                    }
+                }
+            });
         }
     }]);
 

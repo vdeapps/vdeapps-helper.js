@@ -76,7 +76,7 @@ class vdeappsHelper extends vdeappsAddonAbstract {
      * @param args
      * @returns result function
      */
-    executeFunctionByName(functionName, context /*, args */) {
+    static executeFunctionByName(functionName, context /*, args */) {
         if (typeof context == 'undefined') {
             context = window
         }
@@ -96,7 +96,7 @@ class vdeappsHelper extends vdeappsAddonAbstract {
      * Retourne un ID unique
      * @returns {string}
      */
-    uniqID() {
+    static uniqID() {
         var ts = new Date().getTime();
         var randnum = Math.floor((Math.random() * 1000) + 1);
         return String(ts) + String(randnum);
@@ -107,7 +107,7 @@ class vdeappsHelper extends vdeappsAddonAbstract {
      * use jQuery
      * @param elem
      */
-    resetFilters(elem) {
+    static resetFilters(elem) {
         var $form = $(elem).closest('form');
         
         $('input, select', $form).each(function () {
