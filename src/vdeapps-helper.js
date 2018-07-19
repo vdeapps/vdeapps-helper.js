@@ -3,11 +3,10 @@
  * Copyright vdeApps
  */
 
-class vdeappsHelper extends vdeappsAddonAbstract {
+class vdeappsHelper  {
     
     constructor() {
-        super();
-        this.setName('vdeappsHelper');
+        this.name('vdeappsHelper');
     }
     
     /**
