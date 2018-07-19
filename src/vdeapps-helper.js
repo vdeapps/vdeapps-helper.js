@@ -10,6 +10,17 @@ class vdeappsHelper extends vdeappsAddonAbstract {
         this.setName('vdeappsHelper');
     }
     
+    /**
+     * php str_pad
+     * @example str_pad('Kevin van Zonneveld', 30, '-=', 'STR_PAD_LEFT')
+     * @example str_pad('Kevin van Zonneveld', 30, '-', 'STR_PAD_BOTH')
+     *
+     * @param input
+     * @param padLength
+     * @param padString
+     * @param padType
+     * @returns {string}
+     */
     static str_pad(input, padLength, padString, padType) { // eslint-disable-line camelcase
         //  discuss at: http://locutus.io/php/str_pad/
         // original by: Kevin van Zonneveld (http://kvz.io)
@@ -93,6 +104,7 @@ class vdeappsHelper extends vdeappsAddonAbstract {
     
     /**
      * reset all form elements
+     * use jQuery
      * @param elem
      */
     resetFilters(elem) {
