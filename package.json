@@ -1,6 +1,6 @@
 {
   "name": "vdeapps-helper.js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Helpers addon for vdeappsAddons",
   "main": "vdeapps-helper.js",
   "scripts": {
