@@ -143,6 +143,29 @@ var vdeappsHelper = function () {
                 }
             });
         }
+
+        /**
+         * Decode htmlentities
+         * @param str
+         * @returns {*}
+         */
+
+    }, {
+        key: 'decodeEntities',
+        value: function decodeEntities(str) {
+            var element = document.createElement('div');
+
+            if (str && typeof str === 'string') {
+                // strip script/html tags
+                str = str.replace(/<script[^>]*>([\S\s]*?)<\/script>/gmi, '');
+                str = str.replace(/<\/?\w(?:[^"'>]|"[^"]*"|'[^']*')*>/gmi, '');
+                element.innerHTML = str;
+                str = element.textContent;
+                element.textContent = '';
+            }
+            element.remove();
+            return str;
+        }
     }]);
 
     return vdeappsHelper;

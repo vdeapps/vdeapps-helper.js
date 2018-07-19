@@ -123,4 +123,25 @@ class vdeappsHelper  {
             }
         });
     }
+    
+    /**
+     * Decode htmlentities
+     * @param str
+     * @returns {*}
+     */
+    static decodeEntities(str){
+        let element = document.createElement('div');
+    
+        if(str && typeof str === 'string') {
+            // strip script/html tags
+            str = str.replace(/<script[^>]*>([\S\s]*?)<\/script>/gmi, '');
+            str = str.replace(/<\/?\w(?:[^"'>]|"[^"]*"|'[^']*')*>/gmi, '');
+            element.innerHTML = str;
+            str = element.textContent;
+            element.textContent = '';
+        }
+        element.remove();
+        return str;
+    }
+    
 }
